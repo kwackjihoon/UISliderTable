@@ -28,7 +28,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "RE"
         let cell = myTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        let tableValue = String(Int(mySlider.value))
+        let tableValue = String(indexPath.row + Int(mySlider.value))
         
         cell.textLabel?.text = tableValue
         
