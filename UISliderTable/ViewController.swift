@@ -38,6 +38,24 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBAction func sliderMoved(_ sender: Any) {
         print("value: \(Int(mySlider.value))")
         
+        print("value: \(Int(mySlider.value))")
+        if mySlider.value>50 && mySlider.value<51 {
+            let myaAlertConroller = UIAlertController(title: "알림", message: "Value값이 50 입니다.",preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "확인",style: UIAlertActionStyle.default,handler: {
+                (myaction: UIAlertAction)->Void in
+            })
+            
+            let cancelAction = UIAlertAction(title: "취소",style: .cancel,handler: {
+                (myaction: UIAlertAction)->Void in
+            })
+            
+            myaAlertConroller.addAction(okAction)
+            myaAlertConroller.addAction(cancelAction)
+            
+            present(myaAlertConroller, animated: true, completion: nil)
+        }
+        
         // tableVIew 의 값을 reload
         myTableView.reloadData()
         
